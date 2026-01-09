@@ -29,7 +29,7 @@ yarn add expo-router-devtools
 ## Usage
 
 ```bash
-import { ExpoRouterDevTools } from 'expo-router-devtools';
+import { ExpoRouterDevTools } from '@novodip/expo-router-devtools';
 
 export default function App() {
   return (
