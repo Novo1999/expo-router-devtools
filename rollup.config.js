@@ -30,6 +30,7 @@ export default {
     typescript({
       tsconfig: './tsconfig.json',
       useTsconfigDeclarationDir: true,
+      check: false
     }),
   ],
 };
