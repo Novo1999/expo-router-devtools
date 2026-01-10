@@ -87,6 +87,5 @@ export default function RootLayout() {
 ```
 
 ## Demo
-
-https://github.com/user-attachments/assets/9a737d9c-7aaa-4aed-ac82-76f4f3c6240c
+https://github.com/user-attachments/assets/b946e7fe-c519-4b65-9674-0182317f3624
 
