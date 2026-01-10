@@ -38,20 +38,26 @@ yarn add expo-router-devtools
 
 ## Usage
 ```bash
-export default function RootLayout() {
-  const colorScheme = useColorScheme()
+import { ExpoRouterDevTools } from '@novodip/expo-router-devtools'
+import { Stack } from 'expo-router'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <ExpoRouterDevTools />
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+        <ExpoRouterDevTools />
+        <Stack>
+          <Stack.Screen name="index" options={{ title: 'Home' }} />
+          <Stack.Screen name="profile" options={{ title: 'Profile' }} />
+          <Stack.Screen name="posts/index" options={{ title: 'Posts' }} />
+          <Stack.Screen name="posts/[id]" options={{ title: 'Post Details' }} />
+        </Stack>
+      </SafeAreaView>
+    </SafeAreaProvider>
   )
 }
+
 ```
 ## API Reference
 
