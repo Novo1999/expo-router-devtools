@@ -1,25 +1,25 @@
-
 export interface ExpoRouterDevToolsProps {
   /** Position of the dev tools bar */
-  position?: 'top' | 'bottom';
+  position?: 'top' | 'bottom'
   /** Theme */
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark'
   /** Hide in production builds */
-  hideInProduction?: boolean;
+  hideInProduction?: boolean
   /** Custom storage key prefix (alphanumeric, dots, dashes, and underscores only) */
-  storageKeyPrefix?: string;
+  storageKeyPrefix?: string
   /** Callback when route changes */
-  onRouteChange?: (route: string) => void;
+  onRouteChange?: (route: string) => void
   /** Enable route history */
-  enableHistory?: boolean;
+  enableHistory?: boolean
   /** Maximum number of history items */
-  maxHistory?: number;
+  maxHistory?: number
   /** Maximum number of lines the route will show */
-  maxNumOfLines?: number;
+  maxNumOfLines?: number
+  /** Decide If navigation should replace or push the route */
+  replaceRoute?: boolean
 }
-
 export interface SavedRoute {
-  route: string;
-  label: string;
-  timestamp: number;
+  route: string
+  label: string
+  timestamp: number
 }

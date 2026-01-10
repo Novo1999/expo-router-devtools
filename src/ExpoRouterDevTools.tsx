@@ -15,6 +15,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   enableHistory = true,
   maxHistory = MAX_HISTORY,
   maxNumOfLines = 3,
+  replaceRoute = false,
 }) => {
   const pathname = usePathname()
   const searchParams = useGlobalSearchParams()
@@ -106,7 +107,11 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   const navigateToRoute = useCallback(
     (route: string) => {
       try {
-        router.push(route as RelativePathString)
+        if (replaceRoute) {
+          router.replace(route as RelativePathString)
+        } else {
+          router.push(route as RelativePathString)
+        }
       } catch (error) {
         console.error('[ExpoRouterDevTools] Navigation error:', error)
       }
