@@ -15,6 +15,15 @@ Designed to be embedded directly into React Native apps without affecting produc
 
 ---
 
+---
+
+## Benefits
+- Useful for complex projects that has a lot of routing
+- Useful for projects with query params in many places
+- Keeps track of params and query params and save it in the history
+
+---
+
 ## Installation
 
 ```bash
