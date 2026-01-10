@@ -15,8 +15,6 @@ Designed to be embedded directly into React Native apps without affecting produc
 
 ---
 
----
-
 ## Benefits
 - Useful for complex projects that has a lot of routing
 - Useful for projects with query params in many places
