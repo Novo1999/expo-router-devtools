@@ -3,6 +3,10 @@
 A lightweight development utility for inspecting and debugging routes in **Expo Router** applications.
 Designed to be embedded directly into React Native apps without affecting production builds.
 
+## Demo
+https://github.com/user-attachments/assets/b946e7fe-c519-4b65-9674-0182317f3624
+
+
 ---
 
 ## Features
@@ -73,6 +77,7 @@ export default function RootLayout() {
 | `enableHistory` | `boolean` | `true` | Enable route history tracking |
 | `maxHistory` | `number` | `10` | Maximum history items |
 | `maxNumOfLines` | `number` | `3` | Max lines for current route display |
+| `replaceRoute` | `boolean` | `false` | Whether to replace of push the route |
 
 ### Example
 
@@ -84,3 +89,4 @@ export default function RootLayout() {
   onRouteChange={(route) => console.log(route)}
 />
 ```
+
