@@ -261,12 +261,13 @@ const createStyles = (position: 'top' | 'bottom') => {
     selectedItem: {
       backgroundColor: '#e0f2fe',
       borderWidth: 1,
-      borderColor: '#2563eb',
-      color: '#333333',
+      borderColor: buttonBg,
+      color: textColor,
       flexDirection: 'row',
     },
     notSelectedItem: {
-      color: '#333333',
+      backgroundColor: secondaryBg,
+      color: textColor,
       flexDirection: 'row',
     },
     routeBar: {
@@ -308,7 +309,7 @@ const createStyles = (position: 'top' | 'bottom') => {
       backgroundColor: '#dc2626',
     },
     buttonText: {
-      color: '#ffffff',
+      color: bgColor,
       fontSize: 12,
       fontWeight: '600',
     },
@@ -334,7 +335,7 @@ const createStyles = (position: 'top' | 'bottom') => {
     },
     listItemText: {
       fontSize: 11,
-      color: '#333333',
+      color: textColor,
       fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
     },
     savedItem: {
@@ -361,7 +362,7 @@ const createStyles = (position: 'top' | 'bottom') => {
       backgroundColor: '#dc2626',
     },
     deleteButtonText: {
-      color: '#ffffff',
+      color: bgColor,
       fontSize: 14,
       fontWeight: 'bold',
     },
