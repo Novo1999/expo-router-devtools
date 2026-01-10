@@ -5,7 +5,7 @@ Designed to be embedded directly into React Native apps without affecting produc
 
 ## Demo
 
-[![Expo Router DevTools Demo](https://raw.githubusercontent.com/Novo1999/expo-router-devtools/main/assets/demo-thumbnail.png)](
+[![Expo Router DevTools Demo](https://raw.githubusercontent.com/Novo1999/expo-router-devtools/main/assets/devtools-thumbnail.png)](
 https://github.com/Novo1999/expo-router-devtools#demo
 )
 
