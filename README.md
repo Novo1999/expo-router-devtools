@@ -73,6 +73,7 @@ export default function RootLayout() {
 | `enableHistory` | `boolean` | `true` | Enable route history tracking |
 | `maxHistory` | `number` | `10` | Maximum history items |
 | `maxNumOfLines` | `number` | `3` | Max lines for current route display |
+| `replaceRoute` | `boolean` | `false` | Whether to replace of push the route |
 
 ### Example
 
@@ -84,3 +85,8 @@ export default function RootLayout() {
   onRouteChange={(route) => console.log(route)}
 />
 ```
+
+## Demo
+
+https://github.com/user-attachments/assets/9a737d9c-7aaa-4aed-ac82-76f4f3c6240c
+
