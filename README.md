@@ -52,15 +52,6 @@ export default function RootLayout() {
     </ThemeProvider>
   )
 }
-
-```# Expo Router DevTools
-
-A development tool for Expo Router that helps you navigate, save, and track routes.
-
-## Installation
-
-```bash
-npm install expo-router-devtools
 ```
 ## API Reference
 
