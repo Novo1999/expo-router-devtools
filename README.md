@@ -20,7 +20,8 @@ Designed to be embedded directly into React Native apps without affecting produc
 - Useful for projects with query params in many places
 - Keeps track of params and query params and save it in the history
 - Automatically hidden in production
-
+- Save whatever routes you want and navigate to it
+- Routes are automatically stored in expo secure store 
 ---
 
 ## Installation
