@@ -36,13 +36,13 @@ https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
 ## Installation
 
 ```bash
-npm install expo-router-devtools
+npm install @novodip/expo-router-devtools
 ```
 
 or
 
 ```bash
-yarn add expo-router-devtools
+yarn add @novodip/expo-router-devtools
 
 ```
 
