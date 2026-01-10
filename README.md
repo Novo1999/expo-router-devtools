@@ -10,9 +10,9 @@ https://github.com/Novo1999/expo-router-devtools#demo
 )
 
 ▶ **Watch full 34-second demo video**
-https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
----
 
+---
+https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
 ## Features
 
 - View the current route in real time
