@@ -32,6 +32,10 @@ https://github.com/Novo1999/expo-router-devtools#demo
 - Routes are automatically stored in expo secure store 
 ---
 
+
+https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
+
+
 ## Installation
 
 ```bash
