@@ -69,7 +69,6 @@ export default function RootLayout() {
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `position` | `'top' \| 'bottom'` | `'top'` | Position of the DevTools panel |
-| `theme` | `'light' \| 'dark'` | `'light'` | Color theme |
 | `hideInProduction` | `boolean` | `true` | Hide in production builds |
 | `storageKeyPrefix` | `string` | `'expo-router-devtools_'` | Prefix for SecureStore keys |
 | `onRouteChange` | `(route: string) => void` | `undefined` | Callback when route changes |
@@ -83,7 +82,6 @@ export default function RootLayout() {
 ```tsx
 <ExpoRouterDevTools
   position="bottom"
-  theme="dark"
   maxHistory={20}
   onRouteChange={(route) => console.log(route)}
 />
