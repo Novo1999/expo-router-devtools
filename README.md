@@ -26,16 +26,16 @@ Designed to be embedded directly into React Native apps without affecting produc
 
 ```bash
 npm install expo-router-devtools
-
+```
 or
 
+```bash
 yarn add expo-router-devtools
 
 ```
 
 ## Usage
 
-```bash
 import { ExpoRouterDevTools } from '@novodip/expo-router-devtools';
 
 export default function App() {
