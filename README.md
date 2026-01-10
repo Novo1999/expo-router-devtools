@@ -89,5 +89,9 @@ export default function RootLayout() {
 ### Example
 
 ```tsx
-<ExpoRouterDevTools position="bottom" maxHistory={20} onRouteChange={(route) => console.log(route)} />
+<ExpoRouterDevTools
+  position="bottom"
+  maxHistory={20}
+  onRouteChange={(route) => console.log(route)}
+/>
 ```
