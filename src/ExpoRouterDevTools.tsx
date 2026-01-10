@@ -185,11 +185,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
               <Text style={styles.sectionTitle}>Recent Routes</Text>
               <ScrollView style={styles.listContainer}>
                 {routeHistory.map((route, index) => (
-                  <Pressable
-                    key={`${route}-${index}`}
-                    onPress={() => navigateToRoute(route)}
-                    style={({ pressed }) => [styles.listItem, route === currentRoute && styles.selectedItem, pressed && styles.listItemPressed]}
-                  >
+                  <Pressable key={`${route}-${index}`} onPress={() => navigateToRoute(route)} style={[styles.listItem, route === currentRoute && styles.selectedItem]}>
                     <Text style={styles.listItemText} numberOfLines={1}>
                       {route}
                     </Text>
@@ -205,11 +201,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
               <Text style={styles.sectionTitle}>Saved Routes</Text>
               <ScrollView style={styles.listContainer}>
                 {savedRoutes.map((saved, index) => (
-                  <Pressable
-                    key={`${saved.route}-${index}`}
-                    onPress={() => navigateToRoute(saved.route)}
-                    style={({ pressed }) => [styles.savedItem, saved.route === currentRoute && styles.selectedItem, pressed && styles.listItemPressed]}
-                  >
+                  <Pressable key={`${saved.route}-${index}`} onPress={() => navigateToRoute(saved.route)} style={[saved.route === currentRoute ? styles.selectedItem : styles.notSelectedItem]}>
                     <View style={styles.savedItemContent}>
                       <Text style={styles.savedItemLabel}>{saved.label}</Text>
                       <Text style={styles.listItemText} numberOfLines={1}>
@@ -242,7 +234,6 @@ const createStyles = (position: 'top' | 'bottom') => {
   const borderColor = '#dddddd'
   const buttonBg = '#2563eb'
   const secondaryBg = '#f5f5f5'
-  const pressedBg = '#dbeafe'
 
   return StyleSheet.create({
     container: {
@@ -263,11 +254,16 @@ const createStyles = (position: 'top' | 'bottom') => {
       }),
     },
     selectedItem: {
-      backgroundColor: pressedBg,
+      backgroundColor: '#e0f2fe',
       borderWidth: 1,
       borderColor: '#2563eb',
+      color: '#333333',
+      flexDirection: 'row',
     },
-
+    notSelectedItem: {
+      color: '#333333',
+      flexDirection: 'row',
+    },
     routeBar: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -331,12 +327,9 @@ const createStyles = (position: 'top' | 'bottom') => {
       borderRadius: 4,
       marginBottom: 4,
     },
-    listItemPressed: {
-      backgroundColor: pressedBg,
-    },
     listItemText: {
       fontSize: 11,
-      color: textColor,
+      color: '#333333',
       fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
     },
     savedItem: {
