@@ -3,12 +3,9 @@
 A lightweight development utility for inspecting and debugging routes in **Expo Router** applications.
 Designed to be embedded directly into React Native apps without affecting production builds.
 
-## Demo
-https://github.com/user-attachments/assets/b946e7fe-c519-4b65-9674-0182317f3624
-
-
 ---
-
+## Demo
+https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
 ## Features
 
 - View the current route in real time
@@ -27,6 +24,8 @@ https://github.com/user-attachments/assets/b946e7fe-c519-4b65-9674-0182317f3624
 - Save whatever routes you want and navigate to it
 - Routes are automatically stored in expo secure store 
 ---
+
+
 
 ## Installation
 
@@ -70,7 +69,6 @@ export default function RootLayout() {
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `position` | `'top' \| 'bottom'` | `'top'` | Position of the DevTools panel |
-| `theme` | `'light' \| 'dark'` | `'light'` | Color theme |
 | `hideInProduction` | `boolean` | `true` | Hide in production builds |
 | `storageKeyPrefix` | `string` | `'expo-router-devtools_'` | Prefix for SecureStore keys |
 | `onRouteChange` | `(route: string) => void` | `undefined` | Callback when route changes |
@@ -84,7 +82,6 @@ export default function RootLayout() {
 ```tsx
 <ExpoRouterDevTools
   position="bottom"
-  theme="dark"
   maxHistory={20}
   onRouteChange={(route) => console.log(route)}
 />
