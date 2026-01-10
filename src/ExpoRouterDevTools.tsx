@@ -9,7 +9,6 @@ const MAX_HISTORY = 10
 
 const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   position = 'top',
-  theme = 'light',
   hideInProduction = true,
   storageKeyPrefix = STORAGE_PREFIX,
   onRouteChange,
@@ -143,8 +142,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
     }
   }, [SAVED_ROUTES_KEY, HISTORY_KEY])
 
-  const isDark = theme === 'dark'
-  const styles = createStyles(isDark, position)
+  const styles = createStyles(position)
 
   // Check if we should render in production
   if (hideInProduction && !__DEV__) {
@@ -238,13 +236,13 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   )
 }
 
-const createStyles = (isDark: boolean, position: 'top' | 'bottom') => {
-  const bgColor = isDark ? '#1a1a1a' : '#ffffff'
-  const textColor = isDark ? '#e0e0e0' : '#333333'
-  const borderColor = isDark ? '#333333' : '#dddddd'
-  const buttonBg = isDark ? '#2563eb' : '#2563eb'
-  const secondaryBg = isDark ? '#262626' : '#f5f5f5'
-  const pressedBg = isDark ? '#1e40af' : '#dbeafe'
+const createStyles = (position: 'top' | 'bottom') => {
+  const bgColor = '#ffffff'
+  const textColor = '#333333'
+  const borderColor = '#dddddd'
+  const buttonBg = '#2563eb'
+  const secondaryBg = '#f5f5f5'
+  const pressedBg = '#dbeafe'
 
   return StyleSheet.create({
     container: {
