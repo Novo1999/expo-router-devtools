@@ -53,4 +53,37 @@ export default function RootLayout() {
   )
 }
 
+```# Expo Router DevTools
+
+A development tool for Expo Router that helps you navigate, save, and track routes.
+
+## Installation
+
+```bash
+npm install expo-router-devtools
+```
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `position` | `'top' \| 'bottom'` | `'top'` | Position of the DevTools panel |
+| `theme` | `'light' \| 'dark'` | `'light'` | Color theme |
+| `hideInProduction` | `boolean` | `true` | Hide in production builds |
+| `storageKeyPrefix` | `string` | `'expo-router-devtools_'` | Prefix for SecureStore keys |
+| `onRouteChange` | `(route: string) => void` | `undefined` | Callback when route changes |
+| `enableHistory` | `boolean` | `true` | Enable route history tracking |
+| `maxHistory` | `number` | `10` | Maximum history items |
+| `maxNumOfLines` | `number` | `3` | Max lines for current route display |
+
+### Example
+
+```tsx
+<ExpoRouterDevTools
+  position="bottom"
+  theme="dark"
+  maxHistory={20}
+  onRouteChange={(route) => console.log(route)}
+/>
 ```
