@@ -3,15 +3,8 @@
 A lightweight development utility for inspecting and debugging routes in **Expo Router** applications.
 Designed to be embedded directly into React Native apps without affecting production builds.
 
-## Demo
-
-[![Expo Router DevTools Demo](https://raw.githubusercontent.com/Novo1999/expo-router-devtools/main/assets/devtools-thumbnail.png)](
-https://github.com/Novo1999/expo-router-devtools#demo
-)
-
-▶ **Watch full 34-second demo video**
-
 ---
+## Demo
 https://github.com/user-attachments/assets/71dd6770-7e92-4275-9497-40b3fbbf1cae
 ## Features
 
