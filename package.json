@@ -8,7 +8,8 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "metro-open-file.js"
   ],
   "scripts": {
     "build": "tsc --outDir dist --declaration true && rollup -c",
@@ -26,7 +27,7 @@
     "router",
     "navigation-debug"
   ],
-  "author": "Your Name",
+  "author": "Novodip",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -70,7 +71,11 @@
     }
   },
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
     "./metro-open-file": "./metro-open-file.js"
   }
 }
