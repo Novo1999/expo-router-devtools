@@ -17,6 +17,8 @@ export interface ExpoRouterDevToolsProps {
   maxNumOfLines?: number
   /** Decide If navigation should replace or push the route */
   replaceRoute?: boolean
+  enableOpenFile?: boolean // default true
+  openFileEndpoint?: string // default '/dev/open-file'
 }
 export interface SavedRoute {
   route: string

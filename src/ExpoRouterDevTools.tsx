@@ -1,12 +1,10 @@
-import { useGlobalSearchParams, usePathname, useRouter, type RelativePathString } from 'expo-router'
+import { useGlobalSearchParams, usePathname, useRouter, useSegments, type RelativePathString } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import React, { useCallback, useEffect, useState } from 'react'
-import { Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { NativeModules, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { ExpoRouterDevToolsProps, SavedRoute } from './interfaces/base'
-
 const STORAGE_PREFIX = 'expo-router-devtools_'
 const MAX_HISTORY = 10
-
 const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   position = 'top',
   hideInProduction = true,
@@ -16,8 +14,11 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
   maxHistory = MAX_HISTORY,
   maxNumOfLines = 3,
   replaceRoute = false,
+  enableOpenFile = true,
+  openFileEndpoint = '/dev/open-file',
 }) => {
   const pathname = usePathname()
+  const segments = useSegments()
   const searchParams = useGlobalSearchParams()
   const router = useRouter()
 
@@ -29,6 +30,22 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
 
   const SAVED_ROUTES_KEY = `${storageKeyPrefix}saved-routes`
   const HISTORY_KEY = `${storageKeyPrefix}history`
+
+  const openInEditor = useCallback(async () => {
+    try {
+      const scriptURL: string = NativeModules.SourceCode?.getConstants?.()?.scriptURL ?? ''
+      const hostMatch = scriptURL.match(/^https?:\/\/[^/]+/)
+      const metroHost = hostMatch ? hostMatch[0] : 'http://localhost:8081'
+
+      await fetch(`${metroHost}${openFileEndpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ segments, searchParams }),
+      })
+    } catch (error) {
+      console.error('[ExpoRouterDevTools] Error opening file:', error)
+    }
+  }, [segments, searchParams, openFileEndpoint])
 
   // Build current full route
   useEffect(() => {
@@ -116,7 +133,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
         console.error('[ExpoRouterDevTools] Navigation error:', error)
       }
     },
-    [router]
+    [router],
   )
 
   // Delete saved route
@@ -131,7 +148,7 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
         console.error('[ExpoRouterDevTools] Error deleting route:', error)
       }
     },
-    [savedRoutes, SAVED_ROUTES_KEY]
+    [savedRoutes, SAVED_ROUTES_KEY],
   )
 
   // Clear all data
@@ -176,6 +193,12 @@ const ExpoRouterDevTools: React.FC<ExpoRouterDevToolsProps> = ({
             {enableHistory && (
               <Pressable onPress={() => setShowHistory(!showHistory)} style={styles.button}>
                 <Text style={styles.buttonText}>History</Text>
+              </Pressable>
+            )}
+
+            {enableOpenFile && (
+              <Pressable onPress={openInEditor} style={styles.button}>
+                <Text style={styles.buttonText}>Open File</Text>
               </Pressable>
             )}
 
